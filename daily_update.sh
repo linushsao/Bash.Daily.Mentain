@@ -23,6 +23,7 @@ RM_LIST=(
 )
 
 DAILY_UPDATE_LIST=(
+web_crawler.date.twse.R
 web_crawler_etf.yahoo.R
 web_crawler_index.yahoo.R
 web_crawler_stock.yahoo.R
@@ -30,6 +31,7 @@ web_crawler_stock.yahoo.R
 
 DAILY_ANALYZE_ONCE_LIST=(
 generator.of.analyzedData.R
+generator.institutional.investors.R
 )
 
 DAILY_ANALYZE_LIST=(
