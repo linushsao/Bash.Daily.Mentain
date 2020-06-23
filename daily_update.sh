@@ -24,14 +24,16 @@ RM_LIST=(
 
 DAILY_UPDATE_LIST=(
 web_crawler.date.twse.R
+)
+
+DAILY_UPDATE_KEEPALIVE_LIST=(
+web_crawler_stock.yahoo.R
 web_crawler_etf.yahoo.R
 web_crawler_index.yahoo.R
-web_crawler_stock.yahoo.R
 )
 
 DAILY_ANALYZE_ONCE_LIST=(
 generator.of.analyzedData.R
-generator.institutional.investors.R
 )
 
 DAILY_ANALYZE_LIST=(
@@ -48,14 +50,27 @@ main () {
 			do 
 			FILE_NAME=${PATH_TRIGGER}${RM_LIST[i]} 
 			#echo $CHECK
-			rm ${FILE_NAME}
+				if [ -f "$FILE_NAME" ]; then
+					rm ${FILE_NAME}
+				fi
 			done
 
 		for ((i=0; i<${#DAILY_UPDATE_LIST[@]}; i++))
 			do 
 			FILE_NAME=${PATH_DAILY_UPDATE_SCRIPT}${DAILY_UPDATE_LIST[i]} 
 			#echo $CHECK
-			ln -s ${FILE_NAME} ${PATH_DAILY_ONCE_UPDATE}
+				if [ ! -f "$FILE_NAME" ]; then
+					ln -s ${FILE_NAME} ${PATH_DAILY_ONCE_UPDATE}
+				fi
+			done
+			
+		for ((i=0; i<${#DAILY_UPDATE_KEEPALIVE_LIST[@]}; i++))
+			do 
+			FILE_NAME=${PATH_DAILY_UPDATE_SCRIPT}${DAILY_UPDATE_KEEPALIVE_LIST[i]} 
+			#echo $CHECK
+				if [ ! -f "$FILE_NAME" ]; then
+					ln -s ${FILE_NAME} ${PATH_DAILY_UPDATE}
+				fi
 			done
 			
 		MSG="ENABLE: Investing data update."	
@@ -85,6 +100,13 @@ main () {
 			for ((i=0; i<${#DAILY_UPDATE_LIST[@]}; i++))
 				do 
 				FILE_NAME=${PATH_DAILY_UPDATE}${DAILY_UPDATE_LIST[i]} 
+				#echo $CHECK
+				rm ${FILE_NAME}
+				done
+				
+			for ((i=0; i<${#DAILY_UPDATE_KEEPALIVE_LIST[@]}; i++))
+				do 
+				FILE_NAME=${PATH_DAILY_UPDATE}${DAILY_UPDATE_KEEPALIVE_LIST[i]} 
 				#echo $CHECK
 				rm ${FILE_NAME}
 				done

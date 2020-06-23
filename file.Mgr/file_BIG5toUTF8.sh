@@ -23,7 +23,7 @@ file_transfer () { #searching for pending job
 		FILE_BIG5=${PATH_FROM}${filename}
 		FILE_UTF8=${PATH_TO}${filename}
 		iconv -f BIG-5 -t UTF-8 ${FILE_BIG5} > ${FILE_UTF8}
-		msg '[FINISH] ${FILE_UTF8}'
+		msg "[FINISH] ${FILE_UTF8}"
 	done
 }
 
