@@ -4,7 +4,6 @@
 DAILY_RSYNC=(
 /home/linus/Project/9.Shared.Data/1_Taiwan/finance.yahoo.com/
 /home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/foreign.investment.Sales.Summary/1_raw.file/
-/home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/foreign.investment.Sales.Summary/4_raw.file.daily/
 /home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/Margin.Trading_Short.Selling/1_raw.file/
 /home/linus/Project/0_Comprehensive.Research/03_Remixed.data/
 )
@@ -12,8 +11,8 @@ DAILY_RSYNC=(
 DAILY_TRANS_CODE=(
 /home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/foreign.investment.Sales.Summary/1_raw.file/ 
 /home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/foreign.investment.Sales.Summary/2_toUTF8/
-/home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/foreign.investment.Sales.Summary/4_raw.file.daily/
-/home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/foreign.investment.Sales.Summary/5_toUTF8.daily/
+/home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/Investment.profit_related/1_raw.file/
+/home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/Investment.profit_related/2_toUTF8/
 /home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/Margin.Trading_Short.Selling/1_raw.file/
 /home/linus/Project/9.Shared.Data/1_Taiwan/www.twse.com.tw/Margin.Trading_Short.Selling/2_toUTF8/
 )
